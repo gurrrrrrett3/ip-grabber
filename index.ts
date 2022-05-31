@@ -16,12 +16,12 @@ const httpsServer = https.createServer({
 app.use("/", indexRouter)
 
 
-httpServer.listen(8080, () => {
-    console.log('HTTP server listening on port 8080');
+httpServer.listen(80, () => {
+    console.log('HTTP server listening on port 80');
 })
 
-httpsServer.listen(8443, () => {
-    console.log('HTTPS server listening on port 8443');
+httpsServer.listen(443, () => {
+    console.log('HTTPS server listening on port 443');
 })
 
 

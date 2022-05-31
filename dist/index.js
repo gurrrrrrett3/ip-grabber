@@ -16,9 +16,9 @@ const httpsServer = https_1.default.createServer({
     cert: fs_1.default.readFileSync(path_1.default.resolve('./auth/cert.pem'))
 }, app);
 app.use("/", indexRouter_1.default);
-httpServer.listen(8080, () => {
-    console.log('HTTP server listening on port 8080');
+httpServer.listen(80, () => {
+    console.log('HTTP server listening on port 80');
 });
-httpsServer.listen(8443, () => {
-    console.log('HTTPS server listening on port 8443');
+httpsServer.listen(443, () => {
+    console.log('HTTPS server listening on port 443');
 });

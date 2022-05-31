@@ -29,6 +29,9 @@ router.post("/newgrab", (req, res) => {
 router.get("/new", (req, res) => {
     res.sendFile(path_1.default.resolve('./public/new.html'));
 });
+router.get("/view/:id", (req, res) => {
+    res.send(dataManager_1.default.getLink(req.params.id) || { error: "Link not found" });
+});
 router.get("/:id", (req, res) => {
     const { id } = req.params;
     const link = dataManager_1.default.useLink(id, req.ip);

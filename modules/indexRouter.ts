@@ -21,7 +21,7 @@ router.post("/shorten", (req, res) => {
     
     const newLink = DataManager.newLink(url);
     res.redirect(`/new?id=${newLink.id}`);
-})
+}) 
 
 router.post("/newgrab", (req, res) => {
     const { url, name } = req.body;
@@ -32,6 +32,10 @@ router.post("/newgrab", (req, res) => {
 
 router.get("/new", (req, res) => {
     res.sendFile(path.resolve('./public/new.html'));
+})
+
+router.get("/view/:id", (req, res) => {
+    res.send(DataManager.getLink(req.params.id) || {error: "Link not found"});
 })
 
 router.get("/:id", (req, res) => {

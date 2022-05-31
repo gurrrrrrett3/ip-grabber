@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New link</title>
+</head>
+<body>
+    
+    <h1>Gart's link shortener</h1>
+
+    <p>Your link has been successfully shortened!</p>
+    <p>Your shortened link is: <a href="link">Loading...</a></p>
+
+    <p>You can copy the shortened link and share it with your friends!</p>
+
+    <p>You can also <a href="/">go back to the homepage</a>.</p>
+
+    <h3>Thanks for using Gart's link shortener!</h3>
+
+    <script>
+        const query = new URLSearchParams(window.location.search);
+        const id = query.get('id');
+        const name = query.get('name');
+
+        const link = document.querySelector('a');
+        link.href = `http://localhost:8080/${id}`;
+        link.textContent = `https://brog.land/${id}`;
+    </script>
+</body>
+</html>
